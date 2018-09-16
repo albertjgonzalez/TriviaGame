@@ -1,0 +1,10 @@
+body{
+    background-color: darkgrey;
+
+}
+#content{
+    background-color: lightgrey;
+    width: 60%;
+    height: 60%;
+    margin: auto;
+}
