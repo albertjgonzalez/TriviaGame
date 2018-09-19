@@ -51,6 +51,16 @@ var timerInterval = null;
 var gameOver = false;
 var empty = $('<div>')
 var timer
+var correctScreen = `
+<div>
+<h1 class='result' >Correct!</h1>
+</div>
+`
+var incorrectScreen = `
+<div>
+<h1 class='result'>Wrong!</h1>
+</div>
+`
 
 var resetGame = function(){
     $('#timer').css('visibility', 'visible')
@@ -87,9 +97,29 @@ var createQuestion = function (){
 
 }
 
+
+
 var postQuestion = function(){
     var newDiv = $(createQuestion())
     $('#question').html(newDiv)
+}
+
+var postResponseCorrect = function(){
+    $('.sound3').get(0).play();
+    var newDiv = $(correctScreen)
+    $('#question').html(newDiv)
+    clearInterval(timerInterval)
+    $('#timer').css('visibility', 'hidden')
+    setTimeout(correct,2000)
+}
+
+var postResponseIncorrect = function(){
+    $('.sound4').get(0).play();
+    var newDiv = $(incorrectScreen)
+    $('#question').html(newDiv)
+    clearInterval(timerInterval)
+    $('#timer').css('visibility', 'hidden')
+    setTimeout(incorrect,2000)
 }
 
 var start = function(){
@@ -109,29 +139,30 @@ var addLose = function(){
     loses++;
     questionsAsked++;
 }
+
 var correct = function(){
-    $('.sound3').get(0).play();
+    $('#timer').css('visibility', 'visible')
+    clearInterval(timerInterval)
     addWin()
     checkScore()
     if(gameOver){return}
     currentTime = 10
     timer = 10
     $('#timer').html(currentTime)
-    clearInterval(timerInterval)
     timerInterval = setInterval(setTimer,1000);
     postQuestion();
     checkTimer();
 }
 
 var incorrect = function(){
-    $('.sound4').get(0).play();
+    $('#timer').css('visibility', 'visible')
+    clearInterval(timerInterval)
     addLose()
     checkScore()
     if(gameOver){return}
     currentTime = 10
     timer = 10
     $('#timer').html(currentTime)
-    clearInterval(timerInterval)
     timerInterval = setInterval(setTimer,1000);
     postQuestion();
     checkTimer();
@@ -147,7 +178,7 @@ var checkScore = function(){
 
 var checkTimer = function(){
     if (timer==0){
-        incorrect()
+        postResponseIncorrect()
         currentTime = 10;
     }
     return
@@ -155,7 +186,6 @@ var checkTimer = function(){
 
 var showScore = function(){
     clearInterval(timerInterval)
-
     $('#timer').css('visibility', 'hidden')
     var newDiv = `
     <div id="results">
@@ -171,9 +201,9 @@ $( '#startButton' ).click(start)
 
 $( '#resetButton' ).click(resetGame)
 
-$('#question').on("click",'button.correct',correct)
+$('#question').on("click",'button.correct',postResponseCorrect)
 
-$('#question').on("click",'button.incorrect',incorrect)
+$('#question').on("click",'button.incorrect',postResponseIncorrect)
 
 
 

@@ -45,8 +45,8 @@ body{
     width: 108px;
     height: 60px;
     background-color: #e89ac7;
-    border: solid black 2%;
-    border-radius: 10%;
+    border: solid black 1px;
+    border-radius: 10px;
     font-family: 'Exo', sans-serif;
 }
 
@@ -94,6 +94,11 @@ body{
 
 #results{
     font-family: 'Exo', sans-serif;
+}
+
+.result{
+    font-family: 'Exo', sans-serif;
+    font-size: 30px;
 }
 
 .audio{
