@@ -5,28 +5,31 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
   <body>
       <div id='content' class="container">
-          <h1>TriviaGame</h1>
-          <div id="instructions">
-              <h1>instructions</h1>
+          <img id="title"src="assets/images/rick-and-morty-title-png.png" alt="">
+
+          <div class="container title">
+            <h1 class="title">Trivia</h1>
           </div>
-          <div id="timer">
-              <h1>00:00</h1>
-          </div>
-          
-        <div id="question">
-            
-        </div>
+          <div id="box" class="container">
+               <div id="question"></div>
+               <div class="container" id="timer"></div>
         <div id="buttons">
-            <button id="startButton" class="btn btn-danger">Start</button>
-            <button id="resetButton" class="btn btn-warning">Reset</button>
+            <span id="startButton" >Start</span>
+            <span id="resetButton" >Reset</span>
         </div>
+          </div>
+          <audio class="sound sound1" src="assets/sounds/Rick and Morty.mp3" ></audio>
+          <audio class="sound sound2" src="assets/sounds/Tick-DeepFrozenApps-397275646.mp3" ></audio>
+          <audio class="sound sound3" src="assets/sounds/my-man.mp3" ></audio>
+          <audio class="sound sound4" src="assets/sounds/disqualified.mp3" ></audio>
       </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

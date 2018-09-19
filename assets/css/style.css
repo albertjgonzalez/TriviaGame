@@ -1,17 +1,101 @@
 body{
-    background-color: darkgrey;
-
+    background-image: url(../images/maxresdefault.jpg);
+    height: 100%;
+    background-repeat:no-repeat;
+    background-size:cover;
 }
 
 #content{
-    background-color: lightgrey;
     width: 60%;
-    height: 60%;
     margin: auto;
+    text-align: center;
 }
 
+#title{
+    max-width: 75%;
+    
+}
+.title{
+    font-family: 'Gloria Hallelujah', cursive;
+    margin-top:-10.5%;
+    margin-left: -2%;
+    font-size: 50px;
+    color: rgb(129, 202, 19);
+    text-shadow: 2px 2px #00000077;
+}
 
+#timer{
+    height: 20%;
+}
+
+#buttons{
+    text-align: center;
+    margin-left:15%; 
+}
+
+#answerChoices{
+    position: relative;
+    bottom: -150px;
+    left: -8px;
+    width:122%;
+}
+
+#answerChoices button{
+    line-height: 90%;
+    width: 108px;
+    height: 60px;
+    background-color: #e89ac7;
+    border: solid black 2%;
+    border-radius: 10%;
+    font-family: 'Exo', sans-serif;
+}
+
+#newQuestion{
+    text-overflow: ellipsis;
+  max-width: 250px;
+    font-size:110%; 
+    font-family: 'Exo', sans-serif;
+    color:black;
+    margin-left: 82px;
+    height: 20px;
+
+}
+#timer{
+    color:#f0e14a;
+   position: relative;
+   bottom: 40px;
+    font-size: 60px;
+    font-family: 'Gloria Hallelujah', cursive;
+}
 
 #resetButton{
+    font-family: 'Gloria Hallelujah', cursive;
+    color:#f0e14a;
+    font-size: 60px;
+    visibility: hidden;
+
+}
+
+#startButton{
+    font-family: 'Gloria Hallelujah', cursive;
+    color:#f0e14a;
+    font-size: 60px;
+    position: relative;
+    left: 15%;
+}
+
+#box {
+    height: 240px;
+    width: 445px;
+    position: relative;
+    bottom: 14px;
+    right: -3px;
+}
+
+#results{
+    font-family: 'Exo', sans-serif;
+}
+
+.audio{
     visibility: hidden;
 }
